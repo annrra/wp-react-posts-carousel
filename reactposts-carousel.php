@@ -97,11 +97,15 @@ function carousel_hook_js() {
     $rpc_cat_name = $rpc_options['catname'];
     
     $cat_id = get_cat_ID ( $rpc_cat_name );
+    
+    $postsnum = $rpc_options['postsnumber'];
     ?>
     
     <script>
         var RPC_ALL_url = "<?php echo get_site_url(); ?>/wp-json/wp/v2/posts";
         var RPC_CAT_url = "<?php echo get_site_url(); ?>/wp-json/wp/v2/posts?categories=<?php echo $cat_id; ?>";
+        
+        var RPC_posts_num = <?php echo $postsnum; ?>;
     </script>
     
     <?php
@@ -141,28 +145,13 @@ function rpc_images_urls( $object, $field_name, $request ) {
 
 /**shortcode function**/
 function init_postitems( $atts ) {
-    /* will not use shortcode parameters as data is taken from wp_options
-    extract( shortcode_atts( array(
-        'category-name' => '',
-        'post-per-page' => ''
-    ), $atts ) );
-    */
-    $options = get_option('rpc_sample');
-    $cat_name = $options['catname'];
-    $postsnum = $options['postsnumber'];
-    if ( isset( $options['gallery'] ) ) {
-        $ifgallery = 1;
-        $wrapmode = "go-round--gallery";
-    } else {
-        $ifgallery = 0;
-        $wrapmode = "go-round--list";
-    }
     
     $output = '<div id="go-round" class="go-round"></div>' . "\n";
        
     wp_reset_postdata();
     
     return $output;
+    
 }
 add_shortcode( 'posts-carousel', 'init_postitems' );
 /**end shortcode function**/

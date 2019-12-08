@@ -4,9 +4,11 @@ import Slider from "react-slick";
 
 class PostsLoop extends React.Component {
   render () {
-    let posts = this.props.posts
+    let posts = this.props.posts;
 
-    let postsBatch = posts.map((post, index)=> {
+    let postsNum = RPC_posts_num;
+
+    let postsBatch = posts.slice(0, postsNum).map((post, index)=> {
       return (
         <div key={index} className='go-round__slide'>
           <div className='go-round__img'><img src={post.images.large} /></div>
