@@ -20,20 +20,21 @@
 .slick-prev:before,
 .slick-next:before,
 .slick-dots li button:before {
-    font-family: inherit;
+    /*font-family: inherit;*/
 }
 
 .slick-prev:before {
     content: "\2190";
+    color: #000;
 }
 
 .slick-next:before {
     content: "\2192";
+    color: #000;
 }
 
 .slick-dots li button:before {
     content: "\2022";
-    font-size: 1.5rem;
 }
 
 .go-round button.slick-arrow {
