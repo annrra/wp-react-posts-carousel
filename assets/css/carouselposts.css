@@ -17,6 +17,12 @@
     padding: 0 10px;
 }
 
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before {
+    font-family: inherit;
+}
+
 .slick-prev:before {
     content: "\2190";
 }
@@ -27,6 +33,7 @@
 
 .slick-dots li button:before {
     content: "\2022";
+    font-size: 1.5rem;
 }
 
 .go-round button.slick-arrow {
