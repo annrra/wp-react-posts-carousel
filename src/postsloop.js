@@ -7,6 +7,7 @@ class PostsLoop extends React.Component {
     let posts = this.props.posts;
 
     let postsNum = RPC_posts_num;
+    let slidesNum = RPC_slides_num;
 
     let postsBatch = posts.slice(0, postsNum).map((post, index)=> {
       return (
@@ -26,7 +27,7 @@ class PostsLoop extends React.Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: slidesNum,
       slidesToScroll: 1
     };
 

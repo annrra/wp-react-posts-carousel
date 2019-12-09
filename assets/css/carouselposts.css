@@ -12,6 +12,11 @@
     max-width: 100%;
 }
 
+.go-round--slideshow2 .go-round__slide,
+.go-round--slideshow3 .go-round__slide {
+    padding: 0 10px;
+}
+
 .slick-prev:before {
     content: "\2190";
 }
